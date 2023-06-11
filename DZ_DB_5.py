@@ -26,21 +26,21 @@ session.add_all([pushkin, sholohov, tolstoi])
 # print(tolstoi)
 
 # books
-onegin = Book(title='Евгений Онегин', publisher=pushkin)
-kapitanskaya_dochka = Book(title='Капитанская дочка', publisher=pushkin)
-ruslan = Book(title='Руслан и Людмила', publisher=pushkin)
-saltan = Book(title='Сказа о царе Салтане', publisher=pushkin)
-ribak = Book(title='Сказа о рыбаке и рыбке', publisher=pushkin)
+onegin = Book(title='Евгений Онегин', id_pub=1)
+kapitanskaya_dochka = Book(title='Капитанская дочка', id_pub=1)
+ruslan = Book(title='Руслан и Людмила', id_pub=1)
+saltan = Book(title='Сказа о царе Салтане', id_pub=1)
+ribak = Book(title='Сказа о рыбаке и рыбке', id_pub=1)
 
-sudba = Book(title='Судьба человека', publisher=sholohov)
-tihi_don = Book(title='Тихий Дон', publisher=sholohov)
-celina = Book(title='Поднятая целина', publisher=sholohov)
-zherebenok = Book(title='Жеребенок', publisher=sholohov)
-rasskazi = Book(title='Донские рассказы', publisher=sholohov)
+sudba = Book(title='Судьба человека', id_pub=2)
+tihi_don = Book(title='Тихий Дон', id_pub=2)
+celina = Book(title='Поднятая целина', id_pub=2)
+zherebenok = Book(title='Жеребенок', id_pub=2)
+rasskazi = Book(title='Донские рассказы', id_pub=2)
 
-voina_i_mir = Book(title='Война и мир', publisher=tolstoi)
-karenina = Book(title='Анна Каренина', publisher=tolstoi)
-plennik = Book(title='Кавказский пленник', publisher=tolstoi)
+voina_i_mir = Book(title='Война и мир', id_pub=3)
+karenina = Book(title='Анна Каренина', id_pub=3)
+plennik = Book(title='Кавказский пленник', id_pub=3)
 
 session.add_all([onegin, kapitanskaya_dochka, ruslan, saltan, ribak, sudba, tihi_don,
                  celina, zherebenok, rasskazi, voina_i_mir, karenina, plennik])
@@ -54,75 +54,75 @@ misl = Shop(name='Мысль')
 session.add_all([knizhka, chitai_gorod, centr_kniga, znaika, misl])
 
 #stocks
-stock14 = Stock(book=onegin, shop=chitai_gorod, count=12)
-stock15 = Stock(book=kapitanskaya_dochka, shop=chitai_gorod, count=17)
-stock16 = Stock(book=ruslan, shop=chitai_gorod, count=10)
-stock17 = Stock(book=saltan, shop=chitai_gorod, count=2)
-stock18 = Stock(book=ribak, shop=chitai_gorod, count=19)
-stock19 = Stock(book=sudba, shop=chitai_gorod, count=18)
-stock20 = Stock(book=tihi_don, shop=chitai_gorod, count=11)
-stock21 = Stock(book=celina, shop=chitai_gorod, count=20)
-stock22 = Stock(book=zherebenok, shop=chitai_gorod, count=29)
-stock23 = Stock(book=rasskazi, shop=chitai_gorod, count=11)
-stock24 = Stock(book=voina_i_mir, shop=chitai_gorod, count=50)
-stock25 = Stock(book=karenina, shop=chitai_gorod, count=20)
-stock26 = Stock(book=plennik, shop=chitai_gorod, count=40)
+stock14 = Stock(id_book=1, shop=2, count=12)
+stock15 = Stock(id_book=2, shop=2, count=17)
+stock16 = Stock(id_book=3, shop=2, count=10)
+stock17 = Stock(id_book=4, shop=2, count=2)
+stock18 = Stock(id_book=5, shop=2, count=19)
+stock19 = Stock(id_book=6, shop=2, count=18)
+stock20 = Stock(id_book=7, shop=2, count=11)
+stock21 = Stock(id_book=8, shop=2, count=20)
+stock22 = Stock(id_book=9, shop=2, count=29)
+stock23 = Stock(id_book=10, shop=2, count=11)
+stock24 = Stock(id_book=11, shop=2, count=50)
+stock25 = Stock(id_book=12, shop=2, count=20)
+stock26 = Stock(id_book=13, shop=2, count=40)
 
-stock1 = Stock(book=onegin, shop=knizhka, count=10)
-stock2 = Stock(book=kapitanskaya_dochka, shop=knizhka, count=15)
-stock3 = Stock(book=ruslan, shop=knizhka, count=11)
-stock4 = Stock(book=saltan, shop=knizhka, count=12)
-stock5 = Stock(book=ribak, shop=knizhka, count=13)
-stock6 = Stock(book=sudba, shop=knizhka, count=14)
-stock7 = Stock(book=tihi_don, shop=knizhka, count=15)
-stock8 = Stock(book=celina, shop=knizhka, count=16)
-stock9 = Stock(book=zherebenok, shop=knizhka, count=17)
-stock10 = Stock(book=rasskazi, shop=knizhka, count=18)
-stock11 = Stock(book=voina_i_mir, shop=knizhka, count=19)
-stock12 = Stock(book=karenina, shop=knizhka, count=20)
-stock13 = Stock(book=plennik, shop=knizhka, count=21)
+stock1 = Stock(id_book=1, shop=1, count=10)
+stock2 = Stock(id_book=2, shop=1, count=15)
+stock3 = Stock(id_book=3, shop=1, count=11)
+stock4 = Stock(id_book=4, shop=1, count=12)
+stock5 = Stock(id_book=5, shop=1, count=13)
+stock6 = Stock(id_book=6, shop=1, count=14)
+stock7 = Stock(id_book=7, shop=1, count=15)
+stock8 = Stock(id_book=8, shop=1, count=16)
+stock9 = Stock(id_book=9, shop=1, count=17)
+stock10 = Stock(id_book=10, shop=1, count=18)
+stock11 = Stock(id_book=11, shop=1, count=19)
+stock12 = Stock(id_book=12, shop=1, count=20)
+stock13 = Stock(id_book=13, shop=1, count=21)
 
-stock27 = Stock(book=onegin, shop=centr_kniga, count=100)
-stock28 = Stock(book=kapitanskaya_dochka, shop=centr_kniga, count=150)
-stock29 = Stock(book=ruslan, shop=centr_kniga, count=110)
-stock30 = Stock(book=saltan, shop=centr_kniga, count=120)
-stock31 = Stock(book=ribak, shop=centr_kniga, count=130)
-stock32 = Stock(book=sudba, shop=centr_kniga, count=140)
-stock33 = Stock(book=tihi_don, shop=centr_kniga, count=150)
-stock34 = Stock(book=celina, shop=centr_kniga, count=160)
-stock35 = Stock(book=zherebenok, shop=centr_kniga, count=170)
-stock36 = Stock(book=rasskazi, shop=centr_kniga, count=180)
-stock37 = Stock(book=voina_i_mir, shop=centr_kniga, count=190)
-stock38 = Stock(book=karenina, shop=centr_kniga, count=200)
-stock39 = Stock(book=plennik, shop=centr_kniga, count=210)
+stock27 = Stock(id_book=1, shop=3, count=100)
+stock28 = Stock(id_book=2, shop=3, count=150)
+stock29 = Stock(id_book=3, shop=3, count=110)
+stock30 = Stock(id_book=4, shop=3, count=120)
+stock31 = Stock(id_book=5, shop=3, count=130)
+stock32 = Stock(id_book=6, shop=3, count=140)
+stock33 = Stock(id_book=7, shop=3, count=150)
+stock34 = Stock(id_book=8, shop=3, count=160)
+stock35 = Stock(id_book=9, shop=3, count=170)
+stock36 = Stock(id_book=10, shop=3, count=180)
+stock37 = Stock(id_book=11, shop=3, count=190)
+stock38 = Stock(id_book=12, shop=3, count=200)
+stock39 = Stock(id_book=13, shop=3, count=210)
 
-stock40 = Stock(book=onegin, shop=znaika, count=105)
-stock41 = Stock(book=kapitanskaya_dochka, shop=znaika, count=130)
-stock42 = Stock(book=ruslan, shop=znaika, count=143)
-stock43 = Stock(book=saltan, shop=znaika, count=166)
-stock44 = Stock(book=ribak, shop=znaika, count=177)
-stock45 = Stock(book=sudba, shop=znaika, count=123)
-stock46 = Stock(book=tihi_don, shop=znaika, count=117)
-stock47 = Stock(book=celina, shop=znaika, count=124)
-stock48 = Stock(book=zherebenok, shop=znaika, count=176)
-stock49 = Stock(book=rasskazi, shop=znaika, count=188)
-stock50 = Stock(book=voina_i_mir, shop=znaika, count=155)
-stock51 = Stock(book=karenina, shop=znaika, count=158)
-stock52 = Stock(book=plennik, shop=znaika, count=150)
+stock40 = Stock(id_book=1, shop=4, count=105)
+stock41 = Stock(id_book=2, shop=4, count=130)
+stock42 = Stock(id_book=3, shop=4, count=143)
+stock43 = Stock(id_book=4, shop=4, count=166)
+stock44 = Stock(id_book=5, shop=4, count=177)
+stock45 = Stock(id_book=6, shop=4, count=123)
+stock46 = Stock(id_book=7, shop=4, count=117)
+stock47 = Stock(id_book=8, shop=4, count=124)
+stock48 = Stock(id_book=9, shop=4, count=176)
+stock49 = Stock(id_book=10, shop=4, count=188)
+stock50 = Stock(id_book=11, shop=4, count=155)
+stock51 = Stock(id_book=12, shop=4, count=158)
+stock52 = Stock(id_book=13, shop=4, count=150)
 
-stock53 = Stock(book=onegin, shop=misl, count=115)
-stock54 = Stock(book=kapitanskaya_dochka, shop=misl, count=140)
-stock55 = Stock(book=ruslan, shop=misl, count=153)
-stock56 = Stock(book=saltan, shop=misl, count=176)
-stock57 = Stock(book=ribak, shop=misl, count=187)
-stock58 = Stock(book=sudba, shop=misl, count=133)
-stock59 = Stock(book=tihi_don, shop=misl, count=127)
-stock60 = Stock(book=celina, shop=misl, count=134)
-stock61 = Stock(book=zherebenok, shop=misl, count=186)
-stock62 = Stock(book=rasskazi, shop=misl, count=198)
-stock63 = Stock(book=voina_i_mir, shop=misl, count=165)
-stock64 = Stock(book=karenina, shop=misl, count=168)
-stock65 = Stock(book=plennik, shop=misl, count=160)
+stock53 = Stock(id_book=1, shop=5, count=115)
+stock54 = Stock(id_book=2, shop=5, count=140)
+stock55 = Stock(id_book=3, shop=5, count=153)
+stock56 = Stock(id_book=4, shop=5, count=176)
+stock57 = Stock(id_book=5, shop=5, count=187)
+stock58 = Stock(id_book=6, shop=5, count=133)
+stock59 = Stock(id_book=7, shop=5, count=127)
+stock60 = Stock(id_book=8, shop=5, count=134)
+stock61 = Stock(id_book=9, shop=5, count=186)
+stock62 = Stock(id_book=10, shop=5, count=198)
+stock63 = Stock(id_book=11, shop=5, count=165)
+stock64 = Stock(id_book=12, shop=5, count=168)
+stock65 = Stock(id_book=13, shop=5, count=160)
 
 session.add_all([stock1, stock2, stock3, stock4, stock5, stock6, stock7,
                  stock8, stock9, stock10, stock11, stock12, stock13, stock14,
@@ -136,38 +136,45 @@ session.add_all([stock1, stock2, stock3, stock4, stock5, stock6, stock7,
                  stock61, stock62, stock63, stock64, stock65,
                  ])
 
-sale1 = Sale(price=500, date_sale='28-05-2023', id_stock=1, count=5)
+sale1 = Sale(price=500, date_sale='28-05-2023', id_stock=1, count=57)
+sale2 = Sale(price=510, date_sale='27-05-2023', id_stock=2, count=5)
+sale3 = Sale(price=520, date_sale='26-05-2023', id_stock=3, count=5)
+sale4 = Sale(price=530, date_sale='25-05-2023', id_stock=4, count=5)
+sale5 = Sale(price=540, date_sale='24-05-2023', id_stock=5, count=5)
+sale6 = Sale(price=550, date_sale='23-05-2023', id_stock=19, count=5)
+sale7 = Sale(price=560, date_sale='22-05-2023', id_stock=61, count=5)
+sale8 = Sale(price=570, date_sale='21-05-2023', id_stock=62, count=5)
+sale9 = Sale(price=580, date_sale='20-05-2023', id_stock=63, count=5)
+sale10 = Sale(price=590, date_sale='29-05-2023', id_stock=64, count=5)
 
-session.add_all([sale1])
+session.add_all([sale1, sale2, sale3, sale4, sale5, sale6, sale7, sale8, sale9, sale10])
 session.commit()
 
 
-def filter(name_):
-    # for i in session.query(Shop).filter(Shop.id ==
-    #                                     Stock.id_shop).filter(Stock.id_book ==
-    #                                     Book.id).filter(Book.id_pub ==
-    #                                     Publisher.id_pub).filter(Publisher.name == name_).all():
-    #     print(i)
+def get_shops(autor):
+    if autor.isdigit():
+        result = (session.query(Book.title, Shop.name, Sale.price, Sale.date_sale).select_from(Shop).
+                  join(Stock).
+                  join(Book).
+                  join(Publisher).
+                  join(Sale)
+                  ).filter(autor == Publisher.id_pub)
+    else:
+        result = (session.query(Book.title, Shop.name, Sale.price, Sale.date_sale).select_from(Shop).
+                  join(Stock).
+                  join(Book).
+                  join(Publisher).
+                  join(Sale)
+                  ).filter(autor == Publisher.name)
 
-    for book_name, shop_name, sale in session.query(Book, Shop, Sale).filter(Shop.id ==
-                                        Stock.id_shop).filter(Stock.id_book ==
-                                        Book.id).filter(Book.id_pub ==
-                                        Publisher.id_pub).filter(Publisher.name == name_).all():
-        print(book_name.title, '|', shop_name.name, '|', sale.price, '|', sale.date_sale)
+    for title, name, price, date in result:
+        print(f"{title} | {name} | {price} | {date.strftime('%d-%m-%Y')}")
 
-    for book_name, shop_name, sale in session.query(Book, Shop, Sale).filter(Shop.id ==
-                                        Stock.id_shop).filter(Stock.id_book ==
-                                        Book.id).filter(Book.id_pub ==
-                                        Publisher.id_pub).filter(Publisher.name == name_).all():
-        print(book_name.title, '|', shop_name.name, '|', sale.price, '|', sale.date_sale)
-name_ = input('Введите ФИО автора')
-filter(name_)
-
-
-# print(q.)
 session.commit()
 session.close()
 
+if __name__ == '__main__':
+    autor = input('Введите ФИО автора ')
+    get_shops(autor)
 
-# for i in range(53, 101): print(f'stock{i}', end=', ')
 

@@ -12,7 +12,7 @@ class Publisher(Base):
     name = sq.Column(sq.String)
 
     # publisher = relationship(Book, back_populates='id_pub')
-
+    # books = relationship("Book", back_populates="publisher")
     def __str__(self):
         return f'{self.id_pub}: {self.name}'
 
@@ -28,7 +28,8 @@ class Book(Base):
     id_pub = sq.Column(sq.Integer, sq.ForeignKey("publisher.id_pub"), nullable=False)
 
     # publisher = relationship(Publisher, back_populates='id_pub')
-    publisher = relationship(Publisher, backref='publisher.id_pub')
+    publishers = relationship(Publisher, backref="book")
+    # stocks = relationship("Stock", back_populates="Book")
 
     def __str__(self):
         return f'{self.id}: {self.title}, autor id - {self.id_pub}'
@@ -39,6 +40,7 @@ class Shop(Base):
     id = sq.Column(sq.Integer, primary_key=True)
     name = sq.Column(sq.String)
 
+    # stocks = relationship(Stock, back_populates='shop')
     def __str__(self):
         return f'{self.id}: {self.name}'
 
@@ -47,14 +49,14 @@ class Stock(Base):
     __tablename__ = 'stock'
     id = sq.Column(sq.Integer, primary_key=True)
     id_book = sq.Column(sq.Integer, sq.ForeignKey('book.id'), nullable=False)
-    id_shop = sq.Column(sq.Integer, sq.ForeignKey('shop.id'), nullable=False)
+    shop = sq.Column(sq.Integer, sq.ForeignKey('shop.id'), nullable=False)
     count = sq.Column(sq.Integer, nullable=False)
 
-    book = relationship(Book, backref='book.id')
-    shop = relationship(Shop, backref='shop.id')
-
+    books = relationship(Book, backref='stock')
+    shops = relationship(Shop, backref='stock')
+    # sales = relationship(Sale, back_populates='stock')
     def __str__(self):
-        return f'{self.id}: {self.id_book}, {self.id_shop}, {self.count}'
+        return f'{self.id}: book id - {self.id_book}, shop id - {self.shop}, count - {self.count}'
 
 
 class Sale(Base):
@@ -65,7 +67,8 @@ class Sale(Base):
     id_stock = sq.Column(sq.Integer, sq.ForeignKey('stock.id'), nullable=False)
     count = sq.Column(sq.Integer, nullable=False)
 
-    stocks = relationship(Stock, backref='stock.id')
+    # stocks = relationship(Stock, backref='stock.id')
+    stocks = relationship(Stock, backref='sale')
 
     def __str__(self):
         return f'{self.id}: price - {self.price}, date - {self.date_sale}, stock - {self.id_stock}, count - {self.count}'
